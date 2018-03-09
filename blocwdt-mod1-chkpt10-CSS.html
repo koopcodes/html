@@ -1,0 +1,42 @@
+<!--
+> What is the difference between inline, internal, and external styling? Which will you most commonly use?
+
+A: **Inline Styling** is when CSS is placed inside a tag, **Internal Styling** has the CSS inside the page's `<head>` element, and **External Styling** means the CSS is in a different file linked to the page using a `<link>` tag
+
+> Why are id selectors inhibiting?
+
+A: Because an ID must be unique and can only be used once per page
+
+> Is the `<div>` with class `altfoo` an immediate child of the `<div>` with `foo`? Why or why not?
+
+A: This was a good question, because it really stretched my understanding of what an immediate child was. I was going to say yes, then I was going to say no, then I did write a yes answer ("Yes, `<div class="altfoo">` is an immediate child of `<div id="foo">` because no other element surrounds `<div class="altfoo">` except `<div id="foo">`" was my previous answer), but then in trying to answer the next question I put it into CodePen here [https://codepen.io/koopdev/pen/rdNZer] and surprise surprise `.foo>p{background:green}` doesn't turn that last `<p>` inside `<div class = "altfoo">` green so `<div class = "altfoo">` is not an immediate child of `<div id = "foo">`
+    
+> Which element(s) will the following selector select? `.foo p {}`
+
+A: That will select all `<p>` elements since they are all descendants of `<div id = "foo">`
+
+> Which element(s) will the following selector select? `.foo > p{}`
+
+A: That will select only the first two `<p>` elements, but not the third inside `<div class = "altfoo">` because it is not an immediate child of `<div id = "foo">`
+
+> What psuedo-selector would you write to select the first `<p>` element?
+
+A: `p:first-child {}`
+
+**_Code_**
+```
+h2{
+  color:fuchsia
+}
+#idselector{
+  background:turquoise
+}
+.selectorclass{
+  opacity:0.5
+}
+div.selectorclass {
+  border-style:solid
+}
+```
+
+-->
