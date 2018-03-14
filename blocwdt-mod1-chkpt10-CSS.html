@@ -9,7 +9,17 @@ A: Because an ID must be unique and can only be used once per page
 
 > Is the `<div>` with class `altfoo` an immediate child of the `<div>` with `foo`? Why or why not?
 
-A: This was a good question, because it really stretched my understanding of what an immediate child was. I was going to say yes, then I was going to say no, then I did write a yes answer ("Yes, `<div class="altfoo">` is an immediate child of `<div id="foo">` because no other element surrounds `<div class="altfoo">` except `<div id="foo">`" was my previous answer), but then in trying to answer the next question I put it into CodePen here [https://codepen.io/koopdev/pen/rdNZer] and surprise surprise `.foo>p{background:green}` doesn't turn that last `<p>` inside `<div class = "altfoo">` green so `<div class = "altfoo">` is not an immediate child of `<div id = "foo">`
+A: **Revised Answer** Yes, `<div class="altfoo">` is an immediate child of `<div id="foo">` because no other element surrounds `<div class="altfoo">` except `<div id="foo">`
+
+  **Note on revision** I totally understand this being sent back to me.  As soon as I sat down it was immediately apparent where I had gone wrong and frankly don't know what I was thinking except it was late and maybe I should have just gone to bed before trying to turn this in first. Perhaps I can restate my understanding here and you can make sure I am clear:
+  * Refering to my CodePen below [https://codepen.io/koopdev/pen/rdNZer]
+  * `<div class="altfoo">` IS an immediate child of `<div id="foo">` as I stated above.
+  * The `<p>`'s _inside_ `<div class="altfoo">`**are not** immediate children of `<div id="foo">`
+  * I don't know why I was expecting `.foo>p{background:green}` to turn that `<p>` inside `<div class="altfoo">` green, it is clearly not meant to do so if my understanding of what an immediate child above is correct.
+  * `.foo>.altfoo{background:green}` is what I believe grader Bill Tran meant when he said "try to grab the div instead of the p tag." when he sent this back for revision
+
+  Do I have it correct now?
+
     
 > Which element(s) will the following selector select? `.foo p {}`
 
@@ -17,7 +27,7 @@ A: That will select all `<p>` elements since they are all descendants of `<div i
 
 > Which element(s) will the following selector select? `.foo > p{}`
 
-A: That will select only the first two `<p>` elements, but not the third inside `<div class = "altfoo">` because it is not an immediate child of `<div id = "foo">`
+A: That will select only the first two `<p>` elements, but not the third because it is not an immediate child of `<div id = "foo">`
 
 > What psuedo-selector would you write to select the first `<p>` element?
 
